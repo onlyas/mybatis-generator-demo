@@ -13,6 +13,8 @@
 
         <!--覆盖生成XML文件-->
         <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <!--select with nolock-->
+        <plugin type="com.onlyas.app.utils.generator.plugin.SelectWithNolockPlugin" />
         <!-- 自动生成toString方法 -->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <!-- 自动生成equals方法和hashcode方法 -->

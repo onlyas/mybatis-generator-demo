@@ -74,7 +74,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from news
+    from news with (nolock) 
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,7 +85,7 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from news
+    from news with (nolock) 
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -136,7 +136,7 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.onlyas.app.domain.NewsExample" resultType="java.lang.Long">
-    select count(*) from news
+    select count(*) from news with (nolock) 
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
