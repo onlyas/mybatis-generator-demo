@@ -63,6 +63,9 @@ public class NewsExample {
         distinct = false;
     }
 
+    /**
+     * news null
+     */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
 
@@ -382,6 +385,9 @@ public class NewsExample {
         }
     }
 
+    /**
+     * news null
+     */
     public static class Criterion {
         private String condition;
 

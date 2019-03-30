@@ -11,12 +11,14 @@
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
+        <!--覆盖生成XML文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
         <!-- 自动生成toString方法 -->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <!-- 自动生成equals方法和hashcode方法 -->
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
 
-        <commentGenerator>
+        <commentGenerator type="com.onlyas.app.utils.generator.MyCommentGenerator">
             <property name="suppressDate" value="true"/>
             <property name="suppressAllComments" value="true"/>
             <property name="addRemarkComments" value="true"/>
@@ -32,16 +34,16 @@
             <property name="useInformationSchema" value="true"></property>
             <!-- 针对oracle数据库 -->
             <!--<property name="remarksReporting" value="true"></property>-->
-    </jdbcConnection>
+        </jdbcConnection>
 
-    <javaTypeResolver>
-        <property name="useJSR310Types" value="true"/>
-    </javaTypeResolver>
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
 
-    <javaModelGenerator targetPackage="com.onlyas.app.domain" targetProject="src/main/java"/>
-    <sqlMapGenerator targetPackage="com.onlyas.app.dao" targetProject="src/main/resources"/>
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.onlyas.app.dao" targetProject="src/main/java"/>
-    <!--表名-->
+        <javaModelGenerator targetPackage="com.onlyas.app.domain" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="com.onlyas.app.dao" targetProject="src/main/resources"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.onlyas.app.dao" targetProject="src/main/java"/>
+        <!--表名-->
         <table tableName="Users">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
@@ -50,4 +52,5 @@
         </table>
 
     </context>
+
 </generatorConfiguration>

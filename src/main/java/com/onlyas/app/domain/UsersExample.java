@@ -64,6 +64,9 @@ public class UsersExample {
         distinct = false;
     }
 
+    /**
+     * users null
+     */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
 
@@ -513,6 +516,9 @@ public class UsersExample {
         }
     }
 
+    /**
+     * users null
+     */
     public static class Criterion {
         private String condition;
 

@@ -1,12 +1,29 @@
 package com.onlyas.app.domain;
 
+/**
+ * 表名: news 
+ * 
+ * @author  MBG  null
+ */
 public class News {
+    /**
+     * id
+     */
     private Integer id;
 
+    /**
+     * 标题
+     */
     private String title;
 
+    /**
+     * 简介
+     */
     private String intro;
 
+    /**
+     * 内容
+     */
     private String desc;
 
     public Integer getId() {

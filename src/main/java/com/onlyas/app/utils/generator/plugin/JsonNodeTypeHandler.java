@@ -1,4 +1,4 @@
-package com.onlyas.app.mybatis;
+package com.onlyas.app.utils.generator.plugin;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;

@@ -2,17 +2,40 @@ package com.onlyas.app.domain;
 
 import java.time.LocalDateTime;
 
+/**
+ * 表名: users 
+ * 
+ * @author  MBG  null
+ */
 public class Users {
+    /**
+     * id
+     */
     private Integer id;
 
+    /**
+     * 用户名
+     */
     private String userName;
 
+    /**
+     * 性别
+     */
     private String userSex;
 
+    /**
+     * 昵称
+     */
     private String userNickname;
 
+    /**
+     * 生日
+     */
     private LocalDateTime userBirthday;
 
+    /**
+     * 邮箱
+     */
     private String userEmail;
 
     public Integer getId() {
