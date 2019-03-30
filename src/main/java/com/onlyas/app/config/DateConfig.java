@@ -14,7 +14,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 @Configuration
-public class CommonConfiguration {
+public class DateConfig {
     @Bean
     public Module jsonMapperJava8DateTimeModule() {
         SimpleModule module = new SimpleModule();
