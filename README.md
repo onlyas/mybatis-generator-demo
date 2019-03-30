@@ -1,4 +1,4 @@
 # mybatis-generator-demo
 mybatis-generator-demo
 
-mybatis-generator:generate  -e
+代码生成运行类：GeneratorStartUp
