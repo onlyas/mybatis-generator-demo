@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
 
-    <context id="mysqlgenerator" targetRuntime="MyBatis3">
+    <context id="mysqlGenerator" targetRuntime="MyBatis3">
         <property name="autoDelimitKeywords" value="true"/>
         <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错-->
         <property name="beginningDelimiter" value="`"/>

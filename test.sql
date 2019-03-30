@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.24)
 # Database: test
-# Generation Time: 2019-03-28 11:24:02 +0000
+# Generation Time: 2019-03-30 10:28:31 +0000
 # ************************************************************
 
 
@@ -27,10 +27,10 @@ SET NAMES utf8mb4;
 DROP TABLE IF EXISTS `News`;
 
 CREATE TABLE `News` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) DEFAULT NULL,
-  `intro` varchar(50) DEFAULT NULL,
-  `desc` varchar(500) DEFAULT '',
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `title` varchar(50) DEFAULT NULL COMMENT '标题',
+  `intro` varchar(50) DEFAULT NULL COMMENT '简介',
+  `desc` varchar(500) DEFAULT '' COMMENT '内容',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -51,12 +51,12 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `Users`;
 
 CREATE TABLE `Users` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(50) DEFAULT NULL,
-  `user_sex` varchar(50) DEFAULT NULL,
-  `user_nickname` varchar(50) DEFAULT NULL,
-  `user_birthday` datetime DEFAULT NULL,
-  `user_email` varchar(50) DEFAULT NULL,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `user_name` varchar(50) DEFAULT NULL COMMENT '用户名',
+  `user_sex` varchar(50) DEFAULT NULL COMMENT '性别',
+  `user_nickname` varchar(50) DEFAULT NULL COMMENT '昵称',
+  `user_birthday` datetime DEFAULT NULL COMMENT '生日',
+  `user_email` varchar(50) DEFAULT NULL COMMENT '邮箱',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
