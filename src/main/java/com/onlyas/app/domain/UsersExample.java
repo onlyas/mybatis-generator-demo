@@ -65,7 +65,7 @@ public class UsersExample {
     }
 
     /**
-     * users null
+     * users 2019-03-30
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -517,7 +517,7 @@ public class UsersExample {
     }
 
     /**
-     * users null
+     * users 2019-03-30
      */
     public static class Criterion {
         private String condition;

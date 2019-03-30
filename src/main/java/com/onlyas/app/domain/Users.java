@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 /**
  * 表名: users 
  * 
- * @author  MBG  null
+ * @author  MBG  2019-03-30
  */
 public class Users {
     /**
