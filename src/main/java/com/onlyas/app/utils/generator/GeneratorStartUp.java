@@ -26,7 +26,7 @@ public class GeneratorStartUp {
         InputStream resourceAsStream = GeneratorStartUp.class.getClassLoader().getResourceAsStream("generator/generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(resourceAsStream);
-        //新增处理MSSQL
+        //新增处理MSSQL的注释
         List<Context> llc = config.getContexts();
         Map<String, Object> dbColumnRemarkMap = new HashMap<>();
         Map<String, Object> dbTableRemarkMap = new HashMap<>();
@@ -99,6 +99,7 @@ public class GeneratorStartUp {
         }
     }
 
+    /*
     private static Connection getConnection(String driver, String url, String user, String password) {
         Connection conn = null;
         try {
@@ -118,5 +119,5 @@ public class GeneratorStartUp {
             e.printStackTrace();
         }
         return conn;
-    }
+    }*/
 }
