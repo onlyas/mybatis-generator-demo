@@ -9,6 +9,7 @@ import org.mybatis.generator.config.JDBCConnectionConfiguration;
 import org.mybatis.generator.config.TableConfiguration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
+import org.mybatis.generator.internal.JDBCConnectionFactory;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -34,7 +35,9 @@ public class GeneratorStartUp {
             JDBCConnectionConfiguration jdbcConnectionConfiguration = context.getJdbcConnectionConfiguration();
             //判断是否是MSSQL数据库
             String driver = jdbcConnectionConfiguration.getDriverClass();
+            JDBCConnectionFactory jdbcConnectionFactory = new JDBCConnectionFactory(jdbcConnectionConfiguration);
             if (driver.equals("com.microsoft.sqlserver.jdbc.SQLServerDriver")) {
+                /*
                 String url = jdbcConnectionConfiguration.getConnectionURL();
                 String user = jdbcConnectionConfiguration.getUserId();
                 String pwd = jdbcConnectionConfiguration.getPassword();
@@ -43,6 +46,8 @@ public class GeneratorStartUp {
                     System.out.println("数据库连接失败-" + url);
                     continue;
                 }
+                */
+                Connection conn = jdbcConnectionFactory.getConnection();
                 QueryRunner qr = new QueryRunner();
                 //Tables
                 List<TableConfiguration> tableConfigurations = context.getTableConfigurations();
