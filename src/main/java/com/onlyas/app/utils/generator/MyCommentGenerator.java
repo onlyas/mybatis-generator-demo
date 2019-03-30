@@ -60,7 +60,7 @@ public class MyCommentGenerator implements CommentGenerator {
             String id = introspectedTable.getContext().getId();
             if (MBGlobal.dbColumnRemarkMap.containsKey(id)) {
                 Map<String, Object> tableMap = (Map<String, Object>) MBGlobal.dbColumnRemarkMap.get(id);
-                String table =introspectedTable.getFullyQualifiedTable().toString();// introspectedTable.getTableConfiguration().getTableName();
+                String table =introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime();
                 if (tableMap.containsKey(table)) {
                     Map<String, Object> colMap = (Map<String, Object>) tableMap.get(table);
                     if (colMap.containsKey(introspectedColumn.getActualColumnName())) {
@@ -90,7 +90,7 @@ public class MyCommentGenerator implements CommentGenerator {
         StringBuilder sb = new StringBuilder();
         topLevelClass.addJavaDocLine("/**");
         sb.append(" * 表名: ");
-        sb.append(introspectedTable.getFullyQualifiedTable());
+        sb.append(introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime());
         sb.append(" ");
         topLevelClass.addJavaDocLine(sb.toString());
 
@@ -98,7 +98,7 @@ public class MyCommentGenerator implements CommentGenerator {
         String remark="";
         if (MBGlobal.dbTableRemarkMap.containsKey(id)) {
             Map<String, Object> tableMap = (Map<String, Object>) MBGlobal.dbTableRemarkMap.get(id);
-            String table = introspectedTable.getFullyQualifiedTable().toString();
+            String table = introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime();
             if(tableMap.containsKey(table)){
                 remark=tableMap.get(table).toString();
             }
@@ -123,7 +123,7 @@ public class MyCommentGenerator implements CommentGenerator {
         StringBuilder sb = new StringBuilder();
         innerClass.addJavaDocLine("/**");
         sb.append(" * ");
-        sb.append(introspectedTable.getFullyQualifiedTable());
+        sb.append(introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime());
         sb.append(" ");
         sb.append(getDateString());
         innerClass.addJavaDocLine(sb.toString());
