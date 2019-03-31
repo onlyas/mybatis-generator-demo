@@ -30,7 +30,7 @@ public class SelectWithNolockPlugin extends PluginAdapter {
      */
     public void checkIsSupportNolock() {
         String driverClass = context.getJdbcConnectionConfiguration().getDriverClass();
-        if (driverClass.contains("mysql") || driverClass.contains("sqlserver")) {
+        if (driverClass.contains("sqlserver")) {
             isSupportNolock = true;
         } else {
             isSupportNolock = false;
@@ -44,6 +44,7 @@ public class SelectWithNolockPlugin extends PluginAdapter {
 
     /**
      * 代码参考org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.CountByExampleElementGenerator
+     *
      * @param element
      * @param introspectedTable
      * @return
@@ -68,6 +69,7 @@ public class SelectWithNolockPlugin extends PluginAdapter {
 
     /**
      * 代码参考org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.SelectByExampleWithoutBLOBsElementGenerator
+     *
      * @param element
      * @param introspectedTable
      * @return
@@ -112,6 +114,7 @@ public class SelectWithNolockPlugin extends PluginAdapter {
 
     /**
      * 代码参考org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.SelectByExampleWithBLOBsElementGenerator
+     *
      * @param element
      * @param introspectedTable
      * @return
@@ -159,6 +162,7 @@ public class SelectWithNolockPlugin extends PluginAdapter {
     /**
      * 代码参考org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.SelectByPrimaryKeyElementGenerator
      * 和参考自org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.SimpleSelectByPrimaryKeyElementGenerator
+     *
      * @param element
      * @param introspectedTable
      * @return
@@ -287,6 +291,7 @@ public class SelectWithNolockPlugin extends PluginAdapter {
 
     /**
      * 代码参考org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.SimpleSelectAllElementGenerator
+     *
      * @param element
      * @param introspectedTable
      * @return
@@ -339,6 +344,7 @@ public class SelectWithNolockPlugin extends PluginAdapter {
     /**
      * 该方法参考org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.AbstractXmlElementGenerator
      * 新增IntrospectedTable类型参数
+     *
      * @param introspectedTable
      * @return
      */
@@ -352,6 +358,7 @@ public class SelectWithNolockPlugin extends PluginAdapter {
     /**
      * 该方法参考org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.AbstractXmlElementGenerator
      * 新增IntrospectedTable类型参数
+     *
      * @param introspectedTable
      * @return
      */
@@ -365,6 +372,7 @@ public class SelectWithNolockPlugin extends PluginAdapter {
     /**
      * 该方法参考org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.AbstractXmlElementGenerator
      * 新增IntrospectedTable类型参数
+     *
      * @param introspectedTable
      * @return
      */
