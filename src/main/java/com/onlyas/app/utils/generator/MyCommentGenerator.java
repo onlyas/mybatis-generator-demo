@@ -89,10 +89,6 @@ public class MyCommentGenerator implements CommentGenerator {
     public void addModelClassComment(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
         StringBuilder sb = new StringBuilder();
         topLevelClass.addJavaDocLine("/**");
-        sb.append(" * 表名: ");
-        sb.append(introspectedTable.getFullyQualifiedTableNameAtRuntime());
-        sb.append(" ");
-        topLevelClass.addJavaDocLine(sb.toString());
 
         String id = introspectedTable.getContext().getId();
         String remark="";
@@ -106,11 +102,18 @@ public class MyCommentGenerator implements CommentGenerator {
             }
         }else
             remark=introspectedTable.getRemarks();
+
+        sb.append(" * ");
+        sb.append(remark);
+        topLevelClass.addJavaDocLine(sb.toString());
+
         sb.setLength(0);
         sb.append(" * @Description ");
-        sb.append(remark);
-
+        sb.append("表名: ");
+        sb.append(introspectedTable.getFullyQualifiedTableNameAtRuntime());
+        sb.append(" ");
         topLevelClass.addJavaDocLine(sb.toString());
+
         sb.setLength(0);
         sb.append(" * @author ");
         sb.append(" MBG ");

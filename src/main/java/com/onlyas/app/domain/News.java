@@ -1,8 +1,8 @@
 package com.onlyas.app.domain;
 
 /**
- * 表名: news 
- * @Description 新闻表
+ * 新闻表
+ * @Description 表名: news 
  * @author  MBG  
  */
 public class News {

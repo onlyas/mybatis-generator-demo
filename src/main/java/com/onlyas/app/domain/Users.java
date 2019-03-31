@@ -3,8 +3,8 @@ package com.onlyas.app.domain;
 import java.time.LocalDateTime;
 
 /**
- * 表名: users 
- * @Description 用户表
+ * 用户表
+ * @Description 表名: users 
  * @author  MBG  
  */
 public class Users {
