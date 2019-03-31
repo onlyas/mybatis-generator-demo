@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 
 /**
  * 表名: users 
- * 
- * @author  MBG  2019-03-31
+ * @Description 用户表
+ * @author  MBG  
  */
 public class Users {
     /**

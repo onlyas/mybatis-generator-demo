@@ -2,8 +2,8 @@ package com.onlyas.app.domain;
 
 /**
  * 表名: news 
- * 
- * @author  MBG  2019-03-31
+ * @Description 新闻表
+ * @author  MBG  
  */
 public class News {
     /**

@@ -60,7 +60,7 @@ public class MyCommentGenerator implements CommentGenerator {
             String id = introspectedTable.getContext().getId();
             if (MBGlobal.dbColumnRemarkMap.containsKey(id)) {
                 Map<String, Object> tableMap = (Map<String, Object>) MBGlobal.dbColumnRemarkMap.get(id);
-                String table =introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime();
+                String table =introspectedTable.getFullyQualifiedTableNameAtRuntime();
                 if (tableMap.containsKey(table)) {
                     Map<String, Object> colMap = (Map<String, Object>) tableMap.get(table);
                     if (colMap.containsKey(introspectedColumn.getActualColumnName())) {
@@ -90,7 +90,7 @@ public class MyCommentGenerator implements CommentGenerator {
         StringBuilder sb = new StringBuilder();
         topLevelClass.addJavaDocLine("/**");
         sb.append(" * 表名: ");
-        sb.append(introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime());
+        sb.append(introspectedTable.getFullyQualifiedTableNameAtRuntime());
         sb.append(" ");
         topLevelClass.addJavaDocLine(sb.toString());
 
@@ -98,13 +98,16 @@ public class MyCommentGenerator implements CommentGenerator {
         String remark="";
         if (MBGlobal.dbTableRemarkMap.containsKey(id)) {
             Map<String, Object> tableMap = (Map<String, Object>) MBGlobal.dbTableRemarkMap.get(id);
-            String table = introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime();
+            String table = introspectedTable.getFullyQualifiedTableNameAtRuntime();
             if(tableMap.containsKey(table)){
                 remark=tableMap.get(table).toString();
+            }else{
+                remark=introspectedTable.getRemarks();
             }
-        }
+        }else
+            remark=introspectedTable.getRemarks();
         sb.setLength(0);
-        sb.append(" * ");
+        sb.append(" * @Description ");
         sb.append(remark);
 
         topLevelClass.addJavaDocLine(sb.toString());
@@ -123,7 +126,7 @@ public class MyCommentGenerator implements CommentGenerator {
         StringBuilder sb = new StringBuilder();
         innerClass.addJavaDocLine("/**");
         sb.append(" * ");
-        sb.append(introspectedTable.getAliasedFullyQualifiedTableNameAtRuntime());
+        sb.append(introspectedTable.getFullyQualifiedTableNameAtRuntime());
         sb.append(" ");
         sb.append(getDateString());
         innerClass.addJavaDocLine(sb.toString());
@@ -197,7 +200,7 @@ public class MyCommentGenerator implements CommentGenerator {
 
     protected String getDateString() {
         if (suppressDate) {
-            return null;
+            return "";
         } else if (dateFormat != null) {
             return dateFormat.format(new Date());
         } else {
