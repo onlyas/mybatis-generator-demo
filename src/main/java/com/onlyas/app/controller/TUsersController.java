@@ -1,8 +1,6 @@
 package com.onlyas.app.controller;
 
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.onlyas.app.dao.TUsersMapper;
 import com.onlyas.app.domain.TUsers;
 import com.onlyas.app.service.TUsersService;
 import org.springframework.beans.factory.annotation.Autowired;
