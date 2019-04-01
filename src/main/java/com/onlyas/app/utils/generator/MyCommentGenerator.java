@@ -65,7 +65,11 @@ public class MyCommentGenerator implements CommentGenerator {
                     Map<String, Object> colMap = (Map<String, Object>) tableMap.get(table);
                     if (colMap.containsKey(introspectedColumn.getActualColumnName())) {
                         sb.append(colMap.get(introspectedColumn.getActualColumnName()));
+                    }else{
+                        sb.append(introspectedColumn.getActualColumnName());
                     }
+                }else{
+                    sb.append(introspectedColumn.getActualColumnName());
                 }
             } else {
                 sb.append(introspectedColumn.getActualColumnName());
@@ -103,20 +107,18 @@ public class MyCommentGenerator implements CommentGenerator {
         }else
             remark=introspectedTable.getRemarks();
 
+
+        String remarks =remark;
+        if (addRemarkComments && StringUtility.stringHasValue(remarks)) {
+            String[] remarkLines = remarks.split(System.getProperty("line.separator"));  //$NON-NLS-1$
+            for (String remarkLine : remarkLines) {
+                topLevelClass.addJavaDocLine(" * " + remarkLine);  //$NON-NLS-1$
+            }
+        }
+
+        sb.setLength(0);
         sb.append(" * ");
-        sb.append(remark);
-        topLevelClass.addJavaDocLine(sb.toString());
-
-        sb.setLength(0);
-        sb.append(" * @Description ");
-        sb.append("表名: ");
-        sb.append(introspectedTable.getFullyQualifiedTableNameAtRuntime());
-        sb.append(" ");
-        topLevelClass.addJavaDocLine(sb.toString());
-
-        sb.setLength(0);
-        sb.append(" * @author ");
-        sb.append(" MBG ");
+        sb.append(introspectedTable.getFullyQualifiedTable());
         sb.append(" ");
         sb.append(getDateString());
         topLevelClass.addJavaDocLine(sb.toString());
@@ -129,7 +131,7 @@ public class MyCommentGenerator implements CommentGenerator {
         StringBuilder sb = new StringBuilder();
         innerClass.addJavaDocLine("/**");
         sb.append(" * ");
-        sb.append(introspectedTable.getFullyQualifiedTableNameAtRuntime());
+        sb.append(introspectedTable.getFullyQualifiedTable());
         sb.append(" ");
         sb.append(getDateString());
         innerClass.addJavaDocLine(sb.toString());
