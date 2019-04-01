@@ -4,14 +4,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersExample {
+public class TUsersExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public UsersExample() {
+    public TUsersExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -65,7 +65,7 @@ public class UsersExample {
     }
 
     /**
-     * users 
+     * t_users 
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -517,7 +517,7 @@ public class UsersExample {
     }
 
     /**
-     * users 
+     * t_users 
      */
     public static class Criterion {
         private String condition;

@@ -4,10 +4,9 @@ import java.time.LocalDateTime;
 
 /**
  * 用户表
- * @Description 表名: users 
- * @author  MBG  
+ * t_users 
  */
-public class Users {
+public class TUsers {
     /**
      * id
      */
@@ -113,7 +112,7 @@ public class Users {
         if (getClass() != that.getClass()) {
             return false;
         }
-        Users other = (Users) that;
+        TUsers other = (TUsers) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
             && (this.getUserSex() == null ? other.getUserSex() == null : this.getUserSex().equals(other.getUserSex()))

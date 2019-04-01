@@ -2,10 +2,9 @@ package com.onlyas.app.domain;
 
 /**
  * 新闻表
- * @Description 表名: news 
- * @author  MBG  
+ * t_news 
  */
-public class News {
+public class TNews {
     /**
      * id
      */
@@ -83,7 +82,7 @@ public class News {
         if (getClass() != that.getClass()) {
             return false;
         }
-        News other = (News) that;
+        TNews other = (TNews) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
             && (this.getIntro() == null ? other.getIntro() == null : this.getIntro().equals(other.getIntro()))

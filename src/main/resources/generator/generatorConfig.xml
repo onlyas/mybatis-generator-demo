@@ -46,10 +46,10 @@
         <sqlMapGenerator targetPackage="com.onlyas.app.dao" targetProject="src/main/resources"/>
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.onlyas.app.dao" targetProject="src/main/java"/>
         <!--表名-->
-        <table tableName="Users">
+        <table tableName="t_users">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
-        <table tableName="News">
+        <table tableName="t_news">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 

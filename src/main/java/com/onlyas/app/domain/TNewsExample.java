@@ -3,14 +3,14 @@ package com.onlyas.app.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsExample {
+public class TNewsExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public NewsExample() {
+    public TNewsExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -64,7 +64,7 @@ public class NewsExample {
     }
 
     /**
-     * news 
+     * t_news 
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -386,7 +386,7 @@ public class NewsExample {
     }
 
     /**
-     * news 
+     * t_news 
      */
     public static class Criterion {
         private String condition;
