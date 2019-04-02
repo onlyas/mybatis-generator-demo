@@ -55,9 +55,9 @@ public class GeneratorStartUp {
                 Map<String, Object> tableRemarkMap = new HashMap<>();
                 for (TableConfiguration table : tableConfigurations) {
                     List<ColRemark> tableRemark = new ArrayList<>();
-                    String sql_table = "SELECT objname,value FROM  ::fn_listextendedproperty(NULL, 'user', 'dbo', 'table', ?, default, default)";
+                    String sql_table = "SELECT objname,value FROM  ::fn_listextendedproperty(NULL, 'user', 'dbo', 'table', '" + table.getTableName() + "', default, default)";
                     try {
-                        tableRemark = qr.query(conn, sql_table, new BeanListHandler<>(ColRemark.class), table.getTableName());
+                        tableRemark = qr.query(conn, sql_table, new BeanListHandler<>(ColRemark.class));
                     } catch (Exception e) {
                         //e.printStackTrace();
                         tableRemark = new ArrayList<>();
@@ -68,9 +68,9 @@ public class GeneratorStartUp {
                     }
 
                     List<ColRemark> list = new ArrayList<>();
-                    String sql = "SELECT objname,value FROM  ::fn_listextendedproperty(NULL, 'user', 'dbo', 'table', ?, 'column', default)";
+                    String sql = "SELECT objname,value FROM  ::fn_listextendedproperty(NULL, 'user', 'dbo', 'table', '" + table.getTableName() + "', 'column', default)";
                     try {
-                        list = qr.query(conn, sql, new BeanListHandler<>(ColRemark.class), table.getTableName());
+                        list = qr.query(conn, sql, new BeanListHandler<>(ColRemark.class));
                     } catch (Exception e) {
                         //e.printStackTrace();
                         list = new ArrayList<>();
