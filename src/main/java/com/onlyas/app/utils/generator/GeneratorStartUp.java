@@ -59,7 +59,8 @@ public class GeneratorStartUp {
                     try {
                         tableRemark = qr.query(conn, sql_table, new BeanListHandler<>(ColRemark.class), table.getTableName());
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        //e.printStackTrace();
+                        tableRemark = new ArrayList<>();
                     }
                     if (tableRemark.size() > 0) {
                         ColRemark remark = tableRemark.get(0);
@@ -71,7 +72,8 @@ public class GeneratorStartUp {
                     try {
                         list = qr.query(conn, sql, new BeanListHandler<>(ColRemark.class), table.getTableName());
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        //e.printStackTrace();
+                        list = new ArrayList<>();
                     }
 
                     Map<String, Object> colMap = new HashMap<>();
